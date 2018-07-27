@@ -49,10 +49,7 @@ class CakeController extends Controller
         $obj -> description = Input::get('description');
         $obj -> images = Input::get('images');
         $obj -> save();
-        echo "<script>
-                    alert('Saved successful');
-                    window.location.href('/admin/cake');
-                </script>";
+        return redirect('admin/cake');
     }
 
     /**
@@ -104,7 +101,7 @@ class CakeController extends Controller
         $obj -> images = Input::get('images');
         $obj -> save();
         echo "<script>
-                    alert('Update' + this.id + 'information successfull')
+                    alert('Update information successfull')
                     window.location.href = '/admin/cake';
                 </script>";
     }

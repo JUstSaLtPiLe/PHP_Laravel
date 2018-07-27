@@ -42,16 +42,10 @@ class CategoryController extends Controller
     {
         $obj = new Category();
         $obj -> name = Input::get('name');
-        $obj -> type = Input::get('type');
-        $obj -> price = Input::get('price');
-        $obj -> quantity = Input::get('quantity');
         $obj -> description = Input::get('description');
         $obj -> images = Input::get('images');
         $obj -> save();
-        echo "<script>
-                    alert('Saved successful');
-                    window.location.href('/admin/category');
-                </script>";
+        return redirect('/admin/category');
     }
 
     /**
@@ -94,14 +88,11 @@ class CategoryController extends Controller
     {
         $obj = Category::find($id);
         $obj -> name = Input::get('name');
-        $obj -> type = Input::get('type');
-        $obj -> price = Input::get('price');
-        $obj -> quantity = Input::get('quantity');
         $obj -> description = Input::get('description');
         $obj -> images = Input::get('images');
         $obj -> save();
         echo "<script>
-                    alert('Update' + this.id + 'information successfull')
+                    alert('Update information successfull')
                     window.location.href = '/admin/category';
                 </script>";
     }
